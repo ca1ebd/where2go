@@ -9,9 +9,9 @@ namespace Where2Go.API.Controllers
     [Route("api/[controller]")]
     public class PlacesController : ControllerBase
     {
-        private readonly PlaceService _placeService;
+        private readonly IPlaceService _placeService;
 
-        public PlacesController(PlaceService placeService)
+        public PlacesController(IPlaceService placeService)
         {
             _placeService = placeService;
         }

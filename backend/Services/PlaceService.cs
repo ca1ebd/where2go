@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Where2Go.API.Services
 {
-    public class PlaceService
+    public class PlaceService : IPlaceService
     {
         private readonly ApplicationDbContext _context;
 
@@ -54,12 +54,7 @@ namespace Where2Go.API.Services
             return place.ManagementPasswordHash == HashPassword(password);
         }
 
-        private string GenerateShareableUrl()
-        {
-            return Guid.NewGuid().ToString("N").Substring(0, 8);
-        }
-
-        private string HashPassword(string password)
+        public string HashPassword(string password)
         {
             using (var sha256 = SHA256.Create())
             {
@@ -68,16 +63,21 @@ namespace Where2Go.API.Services
             }
         }
 
-        private string GenerateGoogleMapsLink(string address)
+        public string GenerateGoogleMapsLink(string address)
         {
             var encodedAddress = Uri.EscapeDataString(address);
             return $"https://www.google.com/maps/search/?api=1&query={encodedAddress}";
         }
 
-        private string GenerateAppleMapsLink(string address)
+        public string GenerateAppleMapsLink(string address)
         {
             var encodedAddress = Uri.EscapeDataString(address);
             return $"maps://maps.apple.com/?q={encodedAddress}";
+        }
+
+        private string GenerateShareableUrl()
+        {
+            return Guid.NewGuid().ToString("N").Substring(0, 8);
         }
     }
 } 

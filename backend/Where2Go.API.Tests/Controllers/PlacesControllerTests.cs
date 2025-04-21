@@ -86,7 +86,7 @@ namespace Where2Go.API.Tests.Controllers
             // Arrange
             var shareableUrl = "nonexistent";
             _mockPlaceService.Setup(s => s.GetPlaceByShareableUrlAsync(shareableUrl))
-                .ReturnsAsync((Place)null);
+                .ReturnsAsync((Place?)null);
 
             // Act
             var result = await _controller.GetPlace(shareableUrl);
@@ -109,7 +109,7 @@ namespace Where2Go.API.Tests.Controllers
 
             // Assert
             var okResult = Assert.IsType<OkObjectResult>(result.Result);
-            Assert.True((bool)okResult.Value);
+            Assert.True((bool?)okResult.Value);
         }
 
         [Fact]
@@ -126,7 +126,7 @@ namespace Where2Go.API.Tests.Controllers
 
             // Assert
             var okResult = Assert.IsType<OkObjectResult>(result.Result);
-            Assert.False((bool)okResult.Value);
+            Assert.False((bool?)okResult.Value);
         }
     }
 } 

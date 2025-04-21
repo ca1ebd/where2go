@@ -1,17 +1,21 @@
 using System;
 using System.Threading.Tasks;
 using Xunit;
+using Moq;
 using Where2Go.API.Services;
+using Where2Go.API.Data;
 
 namespace Where2Go.API.Tests.Services
 {
     public class PlaceServiceTests
     {
+        private readonly Mock<ApplicationDbContext> _mockContext;
         private readonly PlaceService _service;
 
         public PlaceServiceTests()
         {
-            _service = new PlaceService(null); // We'll only test methods that don't require the database
+            _mockContext = new Mock<ApplicationDbContext>();
+            _service = new PlaceService(_mockContext.Object);
         }
 
         [Fact]

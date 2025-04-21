@@ -26,7 +26,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 
 // Register Services
-builder.Services.AddScoped<PlaceService>();
+builder.Services.AddScoped<IPlaceService, PlaceService>();
 
 var app = builder.Build();
 

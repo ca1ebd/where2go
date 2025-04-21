@@ -1,0 +1,6 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+The core concept is a place that is wicked-fast to host a "place" with a google maps link, apple maps link, and easy to copy address for sharing with friends. So it is a platform independent "place" which you can send to friends. It can have a note/description too with images or instructions (like a gate code or something) This will be useful for people in apartment complexes or elsewhere who host things, but always have to dig up the same info to share with guests. And you can share a google maps link, but that pisses off apple maps users. So why not have a page with both buttons? Target audience is probably tech overthinkers. I want to be dead simple, use a C#/dotnet backend with react frontend. Use a postgred database. Very simple, no user account required to sign up, just a management password, but an account can be created to simplify management of places. Sort of similar to when2meet in simplicity.

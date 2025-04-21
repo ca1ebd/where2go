@@ -1,0 +1,14 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Technical stack
+- C#/dotnet for the backend
+- React for the frontend
+- postresSQL databases, never JSON file storage
+- Separate databases for dev, test, and prod
+- Build using azure functions for hosting on Azure
+- Use terraform for infrastructure deployments
+- Create unit tests for the backend
+- Follow SOLID principles for C#/Dotnet

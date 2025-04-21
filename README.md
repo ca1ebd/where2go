@@ -43,6 +43,29 @@ where2go/
 3. Configure environment variables
 4. Run the backend and frontend applications
 
+### Environment Configuration
+
+1. Copy the example environment files:
+   ```bash
+   cp backend/appsettings.example.json backend/appsettings.json
+   cp .env.example .env
+   ```
+
+2. Update the `.env` file with your local configuration:
+   - Set the correct path to your .NET tools
+   - Configure your database connection string
+   - Add any other required environment variables
+
+3. The application will use the following environment variables:
+   - `DATABASE_URL`: PostgreSQL connection string
+   - Additional variables may be required for specific features
+
+### Security Notes
+
+- Never commit `.env` or `appsettings.json` files containing real credentials
+- Use different credentials for development, testing, and production
+- Keep your management passwords secure and never share them
+
 ## License
 
 MIT
